@@ -16,6 +16,6 @@ ul.langSelect{display: none;}
 
 /*----------------------------------------*/
 /*                CONTENT                 */
-p.info{display: none;}
+p.info, span.example{display: none;}
 /*                CONTENT                 */
 /*----------------------------------------*/

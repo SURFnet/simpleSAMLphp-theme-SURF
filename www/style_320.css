@@ -9,30 +9,28 @@
 
 /*----------------------------------------*/
 /*                  HTML                  */
-ul{width: 255px;}
+
 /*                  HTML                  */
 /*----------------------------------------*/
 
 
 /*----------------------------------------*/
 /*              MAIN ELEMENTS             */
-div#wrapper, div#header, div#content{width: 320px;}
-div#footer{width: 275px;}
+/*div#wrapper, div#header, div#content{width: 320px;}*/
+
 /*              MAIN ELEMENTS             */
 /*----------------------------------------*/
 
 
 /*----------------------------------------*/
 /*                 HEADER                 */
-ul.langSelect{display: none;}
-h1.mainTitle{width: 125px;}
+
 /*                 HEADER                 */
 /*----------------------------------------*/
 
 
 /*----------------------------------------*/
 /*                CONTENT                 */
-div.item{width: 255px;}
-span.example, p.info{display: none;}
+span.example {display: none;}
 /*                CONTENT                 */
 /*----------------------------------------*/

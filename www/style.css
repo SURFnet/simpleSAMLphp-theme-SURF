@@ -100,13 +100,18 @@ body{
 	/* HIER KAN JE DE ACHTERGROND VAN DE WEBSITE AANPASSEN */
 		background-image: url(/* LINK NAAR HET PLAATJE VANAF DE LOCATIE VAN DIT CSS BESTAND, (bijv '../img/achtergrond.jpg') */) top left; /* ACHTERGROND AFBEELDING */
 		background-color: #EEE; /* ACHTERGROND KLEUR */
-	/* TOT HIER */
 }
 
-div, input, label, div.item a, ul, li, img, h1.mainTitle{
+div.footer, div.createIndex, ul.langSelect{
+	background: #EEE; /* ACHTERGROND KLEUR VOOR TEKST OVER ACHTERGROND*/
+	background: rgba(238,238,238,0.8); /* SEMI-TRANSPARANT INDIEN BESCHIKBAAR*/
+}
+ /* TOT HIER */
+
+div, input, div.item, label, a.recover, ul, li, img, h1.mainTitle {
 	float: left;
 }
-span, input[type="submit"], ul.langSelect{
+span, input[type="submit"], ul.langSelect, div.example{
 	float: right;
 }
 h1, h2{
@@ -115,10 +120,10 @@ h1, h2{
 p{
 	margin: 10px 0;
 }
-form, label, input{
+form, input {
 	width: 100%;
 }
-label{
+label, span.example{
 	margin: 10px 0 0 0;
 }
 input{
@@ -133,11 +138,11 @@ input[type="submit"]{
 	cursor: pointer;
 }
 ul{
-	width: 410px;
+	max-width: 410px;
 	list-style: none;
 }
 ul li{
-	background: url(../img/bullet_list.png) left top no-repeat;
+	background: url(bullet_list.png) left top no-repeat;
 	padding: 0 0 0 15px;
 }
 /*                  HTML                  */
@@ -146,18 +151,23 @@ ul li{
 
 /*----------------------------------------*/
 /*              MAIN ELEMENTS             */
-div#wrapper, div#header, div#content{
-	width: 480px;
+div#content, div#wrapper, div#header{
+	width:100%;
 }
+
 div#wrapper{
+  max-width:480px;
 	margin: 10px auto 0 auto;
 	float: none;
 }
 div#header{
+	position:relative;
 	height: 65px;
 }
 div#footer{
-	width: 416px;
+	max-width: 416px;
+	float:right;
+	width:100%;
 	border-top: 2px solid #999;
 	margin: 0 27px;
 	padding: 6px 5px;
@@ -165,10 +175,7 @@ div#footer{
 body.storing div#footer{
 	border: none;
 }
-div#footer, div.createIndex, ul.langSelect{
-	background: #eee;
-	background: rgba(238,238,238,0.8);
-}
+
 /*              MAIN ELEMENTS             */
 /*----------------------------------------*/
 
@@ -176,7 +183,10 @@ div#footer, div.createIndex, ul.langSelect{
 /*----------------------------------------*/
 /*                 HEADER                 */
 ul.langSelect{
-	width: auto;
+  position: absolute;
+  right:0px;
+  top:30px;
+	width: 100px;
 	list-style: none;
 	margin: 0 20px 0 0;
 	padding: 5px;
@@ -190,7 +200,7 @@ ul.langSelect li:first-child{
 	border: none;
 }
 h1.mainTitle{
-	width: 285px;
+	max-width: 285px;
 	margin: 20px 0 20px 20px;
 }
 div#header img{
@@ -204,10 +214,11 @@ div#header img{
 /*----------------------------------------*/
 /*                CONTENT                 */
 div.item{
-	width: 410px;
+	max-width: 410px;
 	background: #FFF;
-	border-radius: 10px;
 	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	margin: 0 10px;
 	padding: 25px;
 	
@@ -232,7 +243,7 @@ body.storing div.createIndex{
 }
 p.error{
 	min-height: 20px;
-	background: url(../img/icon_error.png) left center no-repeat;
+	background: url(icon_error.png) left center no-repeat;
 	padding: 0 0 0 25px;
 }
 body.storing div.item a{
@@ -244,13 +255,13 @@ body.storing div.item a{
 
 
 /*----------------------------------------*/
-/*                  FONTS                 */
+/*                  FOOTER                */
 div#footer a{
 	border-right: 1px solid #8f8f8f;
 	padding: 0 9px 0 0;
 	margin: 0 5px 0 0;
 }
-/*                  FONTS                 */
+/*                  FOOTER                */
 /*----------------------------------------*/
 
 
@@ -263,13 +274,17 @@ body{
 	line-height: normal;
 }
 h1{
-	font-size: 18px;
+	font-size: 150%;
 }
-p, label, input, h2{
-	font-size: 14px;
+label, input, h2{
+	font-size: 120%;
+}
+p, li {
+	font-size: 100%;
+	line-height:140%;
 }
 span{
-	font-size: 12px;
+	font-size: 100%;
 	font-weight: normal;
 }
 h1, label, input[type="submit"], h2, li.active a{
@@ -299,7 +314,6 @@ li.active a{
 }
 p.error{
 	color: #F00;
-	line-height: 20px;
 }
 /*                  FONTS                 */
 /*----------------------------------------*/
