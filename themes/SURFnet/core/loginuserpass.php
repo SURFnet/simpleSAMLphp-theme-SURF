@@ -1,3 +1,15 @@
+<?php
+/**
+ * Do not allow to frame simpleSAMLphp pages from another location.
+ * This prevents clickjacking attacks in modern browsers.
+ *
+ * If you don't want any framing at all you can even change this to
+ * 'DENY', or comment it out if you actually want to allow foreign
+ * sites to put simpleSAMLphp in a frame. The latter is however
+ * probably not a good security practice.
+ */
+header('X-Frame-Options: SAMEORIGIN');
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -8,6 +20,7 @@
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
+	<meta name="robots" content="noindex, nofollow" />
 	<title><?php
 if(array_key_exists('header', $this->data)) {
         echo $this->data['header'];
@@ -111,17 +124,21 @@ foreach ($this->data['stateparams'] as $name => $value) {
 			
 			<!-- LIJST MET TIPS -->
 			<div class="subitem">
-<!--
+
 			  <div class="createIndex">
-				 <ul>
+                <h2><?php echo $this->t('{login:help_header}');?></h2>
+                <p><?php echo $this->t('{login:help_text}');?></p>
+<!--
+       		    <ul>
 					<h2>Tips:</h2>
 					<li><b>Sluiten uw browser af om misbruik te voorkomen.</b> U inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit. </li>
 					<li>Controleer altijd voorafgaand aan het inlog de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
 					<li>Heeft uw aanhoudende problemen heeft met inloggen? Neem dan contact opnemen met de servicedesk: email <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
 				</ul>
+-->
 			 </div>
 			</div>
--->
+
 			<!-- EINDE LIJST MET TIPS -->
 		</div>
 		
