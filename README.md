@@ -29,4 +29,10 @@ Into:
 
 This should enable the theme. You can only see it in action when there is an
 actual login screen with username and password dialog.
- 
+
+# Customization
+
+If you want to modify this theme to use your own branding there are a few 
+locations where you can modify the code. These will be explained below.
+
+TODO 
