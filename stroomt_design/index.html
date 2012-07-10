@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<title>Inloggen | Catharijne College</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" media="screen and (max-width: 370px)" href="css/style_320.css" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="css/style_480.css" />
+	
+	<script type="text/javascript">
+	function initiate(){
+		document.getElementById('username').focus();
+	}
+	</script>
+	
+</head>
+
+<body class="index" onload="initiate()">
+	<!-- DE WRAPPER CENTREERT DE CONTENT VAN DE WEBSITE -->
+	<div id="wrapper">
+	
+		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
+		<div id="header">
+			<img id="logo" src="img/temp_logo.png" /> <!-- DIT IS HET LOGO -->
+			<h1 class="mainTitle"></h1>				        <!-- HIER KAN EEN TITEL -->
+			<ul class="langSelect">
+				<li class="active"><a href="#">NL</a>
+				<li><a href="#">EN</a>
+				<li><a href="#">DE</a>
+			</ul>
+		</div>
+		<!-- EINDE HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
+		
+		<div id="content">
+			<!-- LOGIN VELD MET BIJBEHOREN -->
+			<div class="item">
+				<h1>Log in met uw account</h1>
+				<p class="info">Geef uw catharijne e-mailadres en uw wachtwoord. Uw catharijne e-mailadres begint met uw personeelsnummer of studentekaart nummer.</p>
+				<p class="error">Uw catharijne e-mail en/of wachtwoord zijn niet bekend</p> <!-- ERRORHANDLER BIJ HET INLOGGEN -->
+				
+				<form id="login" method="POST" action="storing.html">
+					<label for="username">Catharijne e-mail:</label><span class="example">(bv. 123456@catherijne.nl)</span>
+					<input type="text" name="username" id="username" autocomplete= "off" />
+					<label for="password">Wachtwoord:</label>
+					<input type="password" name="password" id="password" autocomplete= "off" />
+					<a href="#" class="recover">Wachtwoord vergeten?</a>
+					<input type="submit" name="submit" id="submit" value="Inloggen" />
+				</form>
+				
+			</div>
+			<!-- EINDE LOGIN VELD MET BIJBEHOREN -->
+			
+			<!-- LIJST MET TIPS -->
+			<div class="subitem">
+			  <div class="createIndex">
+				 <ul>
+					<h2>Tips:</h2>
+					<li><b>Sluiten uw browser af om misbruik te voorkomen.</b> U inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit. </li>
+					<li>Controleer altijd voorafgaand aan het inlog de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
+					<li>Heeft uw aanhoudende problemen heeft met inloggen? Neem dan contact opnemen met de servicedesk: email <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
+				</ul>
+			 </div>
+			</div>
+			<!-- EINDE LIJST MET TIPS -->
+		</div>
+		
+		<!-- FOOTER -->
+		<div id="footer">
+			<p><a href="#">Help</a>  <a href="#"> Privacy Policy</a>  &copy; 2012 Catharijne college</p>
+		</div>
+		<!-- EINDE FOOTER -->
+	</div>
+</body>
+</html>
