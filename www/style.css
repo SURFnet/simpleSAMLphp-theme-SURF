@@ -171,9 +171,10 @@ div#footer{
 div#footer p {
   margin: 0px 27px;
 	padding: 6px 5px;
+	border-top: 2px solid #999;
 }
 div.subitem {
-	border-bottom: 2px solid #999;
+	
 }
 body.storing div#footer{
 	border: none;
@@ -187,7 +188,7 @@ body.storing div#footer{
 /*                 HEADER                 */
 ul.langSelect{
   position: absolute;
-  right:0px;
+  right:3px;
   top:35px;
 	width: auto;
 	list-style: none;
