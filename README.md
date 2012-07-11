@@ -5,8 +5,14 @@ based on the design for an identity provider login screen that is optimized
 for use on mobile devices like smart phones and tablets. It was tested on a
 variety of devices.
 
-The original design can be found in the `stroomt_design` folder. The module
-can be installed in simpleSAMLphp by copying it into the `modules` directory.
+The original design by Stroom can be found on Github Pages, and also in the 
+`gh-pages` branch in this repository.
+ 
+[Login Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/index.html), 
+[Error Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/storing.html).
+
+The module can be installed in simpleSAMLphp by copying it into the `modules` 
+directory.
 
 # Installation
 We assume simpleSAMLphp is installed in `/var/www/simplesamlphp`, see the
