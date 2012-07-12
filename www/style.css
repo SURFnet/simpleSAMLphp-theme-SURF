@@ -102,7 +102,7 @@ body{
 		background-color: #EEE; /* ACHTERGROND KLEUR */
 }
 
-div.footer, div.createIndex, ul.langSelect{
+div#footer p, div.createIndex, ul.langSelect{
 	background: #EEE; /* ACHTERGROND KLEUR VOOR TEKST OVER ACHTERGROND*/
 	background: rgba(238,238,238,0.8); /* SEMI-TRANSPARANT INDIEN BESCHIKBAAR*/
 }
@@ -173,12 +173,12 @@ div#footer p {
 	padding: 6px 5px;
 	border-top: 2px solid #999;
 }
-div.subitem {
-	
-}
-body.storing div#footer{
+
+.storing div#footer p {
+  margin-top: 2px;
 	border: none;
 }
+
 
 /*              MAIN ELEMENTS             */
 /*----------------------------------------*/
@@ -240,7 +240,7 @@ div.subitem{
 div.createIndex{
 	position: relative;
 	padding: 30px 8px;
-	z-index: -99999;
+	margin-top: 2px;
 }
 body.storing div.createIndex{
 	padding: 0 10px;
