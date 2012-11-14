@@ -37,8 +37,21 @@ This should enable the theme. You can only see it in action when there is an
 actual login screen with username and password dialog.
 
 # Customization
+If you want to use your own logo you need to modify the CSS somewhat. The logo 
+included in the distribution has size 128x87. You need to modify 
+`www/style.css` in the following places:
 
-If you want to modify this theme to use your own branding there are a few 
-locations where you can modify the code. These will be explained below.
+    div#header img{
+            width: 128px;
+            margin: 0 0 0 20px;
+    }
 
-TODO 
+Set `width` here to the width of the logo.
+
+    div#header{
+            position:relative;
+            height: 108px;
+    }
+
+Set `height` here to the height of the logo and add 21 to it. So if your logo
+has height 44, the height specified here should be `65px`.
