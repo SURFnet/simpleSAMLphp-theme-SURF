@@ -1,5 +1,4 @@
 # Introduction
-
 This project contains a [simpleSAMLphp](http://www.simplesamlphp.org) theme 
 based on the design for an identity provider login screen that is optimized 
 for use on mobile devices like smart phones and tablets. It was tested on a
@@ -13,6 +12,10 @@ The original design by Stroom can be found on Github Pages, and also in the
 
 The module can be installed in simpleSAMLphp by copying it into the `modules` 
 directory.
+
+# License
+As this module takes code from simpleSAMLphp which is licensed under the LGPLv2
+this module has the same license. See included `COPYING` file.
 
 # Installation
 We assume simpleSAMLphp is installed in `/var/www/simplesamlphp`, see the
