@@ -1,0 +1,11 @@
+simplesamlphp-themesurfnet (20130709) unstable; urgency=low
+
+  * Add SURFnet logo.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Tue, 09 Jul 2013 11:55:31 +0200
+
+simplesamlphp-themesurfnet (20130611) unstable; urgency=low
+
+  * Initial release.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Tue, 11 Jun 2013 13:59:05 +0200

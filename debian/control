@@ -1,0 +1,14 @@
+Source: simplesamlphp-themesurfnet
+Section: web
+Priority: extra
+Maintainer: Thijs Kinkhorst <thijs@debian.org>
+Build-Depends: debhelper (>= 9)
+Homepage: https://github.com/SURFnet/simpleSAMLphp-SURFnet
+Vcs-Git: https://github.com/SURFnet/simpleSAMLphp-SURFnet.git
+Standards-Version: 3.9.5
+
+Package: simplesamlphp-themesurfnet
+Architecture: all 
+Depends: simplesamlphp, ${misc:Depends}
+Description: simpleSAMLphp theme for SURFnet
+ SURFnet-themed simpleSAMLphp experience.

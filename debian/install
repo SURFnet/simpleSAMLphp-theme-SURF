@@ -1,0 +1,3 @@
+themes	usr/share/simplesamlphp/modules/themeSURFnet
+www	usr/share/simplesamlphp/modules/themeSURFnet
+debian/default-enable usr/share/simplesamlphp/modules/themeSURFnet

@@ -1,0 +1,12 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: simpleSAMLphp-SURFnet
+Upstream-Contact: Joost van Dijk <jodi@surfnet.nl>
+Source: https://github.com/SURFnet/simpleSAMLphp-SURFnet
+
+Files: *
+Copyright: SURFnet B.V.
+License: LGPL-2
+
+Files: debian/*
+Copyright: 2013 Tilburg University
+License: LGPL-2
