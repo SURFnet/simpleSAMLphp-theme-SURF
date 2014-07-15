@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 	<meta name="HandheldFriendly" content="true" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="robots" content="noindex, nofollow" />
-    <meta name="googlebot" content="noarchive, nofollow" />';
+	<meta name="googlebot" content="noarchive, nofollow" />
 	
 	<title><?php
 if(array_key_exists('header', $this->data)) {
