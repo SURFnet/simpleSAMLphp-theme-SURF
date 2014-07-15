@@ -52,7 +52,7 @@ if(array_key_exists('header', $this->data)) {
 			<ul class="langSelect">
 
 <?php 
-$includeLanguageBar = TRUE;
+$includeLanguageBar = FALSE;
 if (!empty($_POST)) 
 	$includeLanguageBar = FALSE;
 if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE) 
