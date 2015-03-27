@@ -25,7 +25,6 @@ You can install this theme as follows:
 
     $ cd /var/www/simplesamlphp/modules
     $ git clone https://github.com/SURFnet/simpleSAMLphp-SURFnet.git themeSURFnet
-    $ touch /var/www/simplesamlphp/modules/themeSURFnet/enable
 
 Now you can edit the main configuration file to enable the theme, change the
 following line in `/var/www/simplesamlphp/config/config.php`:
