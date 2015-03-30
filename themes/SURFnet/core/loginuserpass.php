@@ -109,7 +109,7 @@ if ($this->data['errorcode'] !== NULL) {
 					<label for="password"><?php echo $this->t('{login:password}'); ?></label>
 					<input type="password" name="password" id="password" autocomplete= "off" />
 					<!-- <a href="#" class="recover">Wachtwoord vergeten?</a> -->
-					<input onclick="this.value='Processing...';this.disabled=true;return true;" type="submit" name="submit" id="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
+					<input onclick="this.value='Processing...';this.disabled=true;this.form.submit();return true;" type="submit" name="submit" id="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
 
 <?php
 foreach ($this->data['stateparams'] as $name => $value) {
