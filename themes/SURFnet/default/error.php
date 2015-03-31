@@ -10,7 +10,7 @@
  */
 header('X-Frame-Options: SAMEORIGIN');
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
 
@@ -31,7 +31,7 @@ if(array_key_exists('header', $this->data)) {
 ?></title>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style.css'); ?>" />
-    <link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
 	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_480.css'); ?>" />
 
 </head>

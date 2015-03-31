@@ -11,7 +11,7 @@ The original design by Stroom can be found on Github Pages, and also in the
 [Error Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/storing.html).
 
 The module can be installed in simpleSAMLphp by copying it into the `modules` 
-directory.
+directory or by using composer.
 
 # License
 As this module takes code from simpleSAMLphp which is licensed under the LGPLv2

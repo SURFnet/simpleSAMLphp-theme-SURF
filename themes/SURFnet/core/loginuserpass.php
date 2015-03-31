@@ -10,7 +10,7 @@
  */
 header('X-Frame-Options: SAMEORIGIN');
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
 
@@ -131,9 +131,9 @@ foreach ($this->data['stateparams'] as $name => $value) {
 <!--
        		    <ul>
 					<h2>Tips:</h2>
-					<li><b>Sluiten uw browser af om misbruik te voorkomen.</b> U inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit. </li>
-					<li>Controleer altijd voorafgaand aan het inlog de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
-					<li>Heeft uw aanhoudende problemen heeft met inloggen? Neem dan contact opnemen met de servicedesk: email <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
+					<li><b>Sluit uw browser af om misbruik te voorkomen.</b> Uw inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit.</li>
+					<li>Controleer altijd voorafgaand aan het inloggen de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
+					<li>Heeft uw aanhoudende problemen met inloggen? Neem dan contact opnemen met de servicedesk: e-mail <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
 				</ul>
 -->
 			 </div>
