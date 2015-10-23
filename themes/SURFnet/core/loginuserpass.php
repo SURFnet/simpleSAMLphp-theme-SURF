@@ -47,7 +47,7 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" /> <!-- DIT IS HET LOGO -->
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
 			<h1 class="mainTitle"></h1>				        <!-- HIER KAN EEN TITEL -->
 			<ul class="langSelect">
 
