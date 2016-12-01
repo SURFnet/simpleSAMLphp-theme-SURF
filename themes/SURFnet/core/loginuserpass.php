@@ -10,7 +10,7 @@
  */
 header('X-Frame-Options: SAMEORIGIN');
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
 
@@ -47,7 +47,7 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" /> <!-- DIT IS HET LOGO -->
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
 			<h1 class="mainTitle"></h1>				        <!-- HIER KAN EEN TITEL -->
 			<ul class="langSelect">
 
@@ -109,7 +109,7 @@ if ($this->data['errorcode'] !== NULL) {
 					<label for="password"><?php echo $this->t('{login:password}'); ?></label>
 					<input type="password" name="password" id="password" autocomplete= "off" />
 					<!-- <a href="#" class="recover">Wachtwoord vergeten?</a> -->
-					<input type="submit" name="submit" id="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
+					<input onclick="this.value='Processing...';this.disabled=true;this.form.submit();return true;" type="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
 
 <?php
 foreach ($this->data['stateparams'] as $name => $value) {
@@ -131,9 +131,9 @@ foreach ($this->data['stateparams'] as $name => $value) {
 <!--
        		    <ul>
 					<h2>Tips:</h2>
-					<li><b>Sluiten uw browser af om misbruik te voorkomen.</b> U inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit. </li>
-					<li>Controleer altijd voorafgaand aan het inlog de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
-					<li>Heeft uw aanhoudende problemen heeft met inloggen? Neem dan contact opnemen met de servicedesk: email <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
+					<li><b>Sluit uw browser af om misbruik te voorkomen.</b> Uw inlog blijft behouden voor alle websites en applicaties die ervan gebruikmaken zolang u uw browser niet afsluit.</li>
+					<li>Controleer altijd voorafgaand aan het inloggen de URL van deze pagina. Deze moet beginnen met <b>https://federatie.c-college.nl</b></li>
+					<li>Heeft uw aanhoudende problemen met inloggen? Neem dan contact opnemen met de servicedesk: e-mail <a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>, telefoon 088-4699070</li>
 				</ul>
 -->
 			 </div>
