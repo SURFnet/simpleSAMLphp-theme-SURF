@@ -1,3 +1,9 @@
+simplesamlphp-themesurfnet (20161201) unstable; urgency=medium
+
+  * Various fixes and updates.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Thu, 01 Dec 2016 15:18:36 +0000
+
 simplesamlphp-themesurfnet (20140715) unstable; urgency=medium
 
   * Fix stray '; on error page.
