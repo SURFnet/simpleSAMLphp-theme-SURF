@@ -5,11 +5,11 @@ Source: https://github.com/SURFnet/simpleSAMLphp-SURFnet
 
 Files: *
 Copyright: SURFnet B.V.
-License: LGPL-2.1
+License: LGPL-2.1+
 
 Files: debian/*
 Copyright: 2013 Tilburg University
-License: LGPL-2.1
+License: LGPL-2.1+
 
 License: LGPL-2.1+
  This program is free software; you can redistribute it and/or modify it
