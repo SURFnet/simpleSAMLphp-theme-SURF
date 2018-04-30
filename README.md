@@ -14,8 +14,8 @@ The module can be installed in simpleSAMLphp by copying it into the `modules`
 directory or by using composer.
 
 # License
-As this module takes code from simpleSAMLphp which is licensed under the LGPLv2
-this module has the same license. See included `COPYING` file.
+As this module takes code from simpleSAMLphp which is licensed under the LGPLv2.1
+or later, this module has the same license. See included `COPYING` file.
 
 # Installation
 We assume simpleSAMLphp is installed in `/var/www/simplesamlphp`, see the
