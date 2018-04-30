@@ -1,11 +1,11 @@
 Source: simplesamlphp-themesurfnet
 Section: web
-Priority: extra
+Priority: optional
 Maintainer: Thijs Kinkhorst <thijs@debian.org>
 Build-Depends: debhelper (>= 9)
 Homepage: https://github.com/SURFnet/simpleSAMLphp-SURFnet
 Vcs-Git: https://github.com/SURFnet/simpleSAMLphp-SURFnet.git
-Standards-Version: 3.9.5
+Standards-Version: 4.1.4
 
 Package: simplesamlphp-themesurfnet
 Architecture: all 

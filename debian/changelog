@@ -1,3 +1,9 @@
+simplesamlphp-themesurfnet (20180430) unstable; urgency=medium
+
+  * Add template for the stepupsfo module.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 30 Apr 2018 11:29:57 +0000
+
 simplesamlphp-themesurfnet (20161201) unstable; urgency=medium
 
   * Various fixes and updates.
