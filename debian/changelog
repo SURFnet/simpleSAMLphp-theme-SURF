@@ -1,3 +1,10 @@
+simplesamlphp-themesurfnet (20180508) unstable; urgency=medium
+
+  * Remove unintentionally added local logo.
+  * Silence spurious PHP notice in loginuserpass.php.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Tue, 01 May 2018 10:15:55 +0000
+
 simplesamlphp-themesurfnet (20180430) unstable; urgency=medium
 
   * Add template for the stepupsfo module.
