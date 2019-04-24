@@ -105,15 +105,15 @@ if ($this->data['errorcode'] !== NULL) {
 ?>				
 				<form id="login" method="POST" action="?" name="f">
 					<label for="username"><?php echo $this->t('{login:username}'); ?></label> <!-- <span class="example">(bv. 123456@catherijne.nl)</span> -->
-					<input type="text" name="username" id="username" value="<?php echo htmlspecialchars(@$this->data['username']); ?>" autocomplete= "off" />
+					<input type="text" name="username" id="username" value="<?php echo htmlspecialchars(@$this->data['username']); ?>" autocomplete="username">
 					<label for="password"><?php echo $this->t('{login:password}'); ?></label>
-					<input type="password" name="password" id="password" autocomplete= "off" />
+					<input type="password" name="password" id="password" autocomplete="current-password">
 					<!-- <a href="#" class="recover">Wachtwoord vergeten?</a> -->
-					<input onclick="this.value='Processing...';this.disabled=true;this.form.submit();return true;" type="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
+					<input onclick="this.value='Processing...';this.disabled=true;this.form.submit();return true;" type="submit" value="<?php echo $this->t('{login:login_button}'); ?>">
 
 <?php
 foreach ($this->data['stateparams'] as $name => $value) {
-	echo('<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars($value) . '" />');
+	echo('<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars($value) . '">');
 }
 ?>
 
