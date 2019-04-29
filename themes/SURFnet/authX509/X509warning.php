@@ -11,7 +11,8 @@
 header('X-Frame-Options: SAMEORIGIN');
 
 $warning = $this->t('{authX509:X509warning:warning}', array(
-    '%days%' => htmlspecialchars($this->data['daysleft']),
+    '%days%' => htmlspecialchars($this->data['daysleft']),     // SSP <  1.16
+    '%daysleft%' => htmlspecialchars($this->data['daysleft']), // SSP >= 1.17
 ));
 
 if( $this->data['renewurl']) {
