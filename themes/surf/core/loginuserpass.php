@@ -29,9 +29,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style.css'); ?>" />
-  <link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_480.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style.css'); ?>" />
+  <link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_480.css'); ?>" />
 	
 	<script type="text/javascript">
 	function initiate(){
@@ -47,7 +47,7 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themesurf/logo.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
 			<h1 class="mainTitle"></h1>				        <!-- HIER KAN EEN TITEL -->
 			<ul class="langSelect">
 

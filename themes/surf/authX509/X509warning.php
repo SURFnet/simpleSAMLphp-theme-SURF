@@ -9,8 +9,24 @@
  * probably not a good security practice.
  */
 header('X-Frame-Options: SAMEORIGIN');
-?>
 
+$warning = $this->t('{authX509:X509warning:warning}', array(
+    '%days%' => htmlspecialchars($this->data['daysleft']),     // SSP <  1.16
+    '%daysleft%' => htmlspecialchars($this->data['daysleft']), // SSP >= 1.17
+));
+
+if( $this->data['renewurl']) {
+    $warning .= " " . $this->t('{authX509:X509warning:renew_url}', array(
+        '%renewurl%' => $this->data['renewurl'],
+    ));
+} else {
+    $warning .= " " . $this->t('{authX509:X509warning:renew}');
+}
+
+$this->data['header'] = $this->t('{authX509:X509warning:warning_header}');
+$this->data['autofocus'] = 'proceedbutton';
+
+?>
 <!DOCTYPE html>
 
 <html>
@@ -31,9 +47,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_480.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_480.css'); ?>" />
 
 </head>
 
@@ -43,12 +59,12 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" />
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themesurf/logo.png'); ?>" alt="" />
 			<h1 class="mainTitle"></h1>
 			<ul class="langSelect">
 
 <?php 
-$includeLanguageBar = FALSE;
+$includeLanguageBar = TRUE;
 if (!empty($_POST)) 
 	$includeLanguageBar = FALSE;
 if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE) 
@@ -87,48 +103,19 @@ if ($includeLanguageBar) {
 			<!-- CONTENT MET WITTE ACHTERGROND -->
 			<div class="item">
 
+<form style="display: inline; margin: 0px; padding: 0px" action="<?php echo htmlspecialchars($this->data['target']); ?>">
 
-<h1>Error while performing second factor authentication</h1>
+    <?php
+        // Embed hidden fields...
+        foreach ($this->data['data'] as $name => $value) {
+            echo('<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars($value) . '" />');
+        }
+    ?>
+    <p><?php echo $warning; ?></p>
 
-<?php
-if (
-    $this->data['status'] === "urn:oasis:names:tc:SAML:2.0:status:Responder" &&
-    $this->data['subStatus'] === "urn:oasis:names:tc:SAML:2.0:status:AuthnFailed" ):
-?>
+    <input type="submit" name="proceed" id="proceedbutton" value="<?php echo htmlspecialchars($this->t('{authX509:X509warning:proceed}')) ?>" />
 
-<p>Authentication not successful:<br/><br/>
-<strong>
-    <?= htmlspecialchars($this->data['statusMessage']) ?>
-</strong></p>
-
-<?php
-elseif (
-    $this->data['status'] === "urn:oasis:names:tc:SAML:2.0:status:Responder" &&
-    $this->data['subStatus'] === "urn:oasis:names:tc:SAML:2.0:status:NoAuthnContext" ):
-?>
-
-<p>You could not be authenticated at the requested level.<br/>
-<?=htmlspecialchars($this->data['statusMessage'])?></p>
-
-<p>Do you have a token registered with the required level?<br/><br/>
-Please go to the <a href="<?=$this->data['selfserviceUrl']?>">Selfservice Registration Portal</a>
-to review or enroll your token.</p>
-
-<?php
-else:
-?>
-
-<p>Unexpected error occurred while performing second factor authentication.<br/><br/>
-<?=htmlspecialchars($this->data['status'])?><br/>
-<?=htmlspecialchars($this->data['subStatus'])?><br/>
-<?=htmlspecialchars($this->data['statusMessage'])?></p>
-
-<p>Please try again or contact your support desk.</p>
-
-<?php
-endif;
-?>
-
+</form>
 			</div>	
 			<!-- EINDE CONTENT MET WITTE ACHTERGROND -->			
 		</div>

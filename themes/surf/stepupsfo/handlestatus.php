@@ -10,6 +10,7 @@
  */
 header('X-Frame-Options: SAMEORIGIN');
 ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -30,9 +31,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_480.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_480.css'); ?>" />
 
 </head>
 
@@ -42,12 +43,12 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" />
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themesurf/logo.png'); ?>" alt="" />
 			<h1 class="mainTitle"></h1>
 			<ul class="langSelect">
 
 <?php 
-$includeLanguageBar = TRUE;
+$includeLanguageBar = FALSE;
 if (!empty($_POST)) 
 	$includeLanguageBar = FALSE;
 if (isset($this->data['hideLanguageBar']) && $this->data['hideLanguageBar'] === TRUE) 
@@ -85,20 +86,49 @@ if ($includeLanguageBar) {
 		<div id="content">
 			<!-- CONTENT MET WITTE ACHTERGROND -->
 			<div class="item">
-				<h1><?php echo $this->t($this->data['dictTitle']); ?></h1>
-				<p><?php
-echo htmlspecialchars($this->t($this->data['dictDescr'], $this->data['parameters']));?></p>
-				<!-- <p>
-					Bij aanhoudende problemen kun je contact opnemen met <a href="https://servicedesk.c-college.nl" target="_blank">https://servicedesk.c-college.nl</a>, telefoon 088-4699070 
-					of e&#8209;mail&nbsp;<a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>
-				</p> -->
-				<p>
 
-                    <?php echo $this->t('report_trackid'); ?>
-                    <?php echo $this->data['error']['trackId']; ?>
-					<!-- Vermeld de volgende foutcode: <br />
-					<b>1531276567327</b> -->
-				</p>		
+
+<h1>Error while performing second factor authentication</h1>
+
+<?php
+if (
+    $this->data['status'] === "urn:oasis:names:tc:SAML:2.0:status:Responder" &&
+    $this->data['subStatus'] === "urn:oasis:names:tc:SAML:2.0:status:AuthnFailed" ):
+?>
+
+<p>Authentication not successful:<br/><br/>
+<strong>
+    <?= htmlspecialchars($this->data['statusMessage']) ?>
+</strong></p>
+
+<?php
+elseif (
+    $this->data['status'] === "urn:oasis:names:tc:SAML:2.0:status:Responder" &&
+    $this->data['subStatus'] === "urn:oasis:names:tc:SAML:2.0:status:NoAuthnContext" ):
+?>
+
+<p>You could not be authenticated at the requested level.<br/>
+<?=htmlspecialchars($this->data['statusMessage'])?></p>
+
+<p>Do you have a token registered with the required level?<br/><br/>
+Please go to the <a href="<?=$this->data['selfserviceUrl']?>">Selfservice Registration Portal</a>
+to review or enroll your token.</p>
+
+<?php
+else:
+?>
+
+<p>Unexpected error occurred while performing second factor authentication.<br/><br/>
+<?=htmlspecialchars($this->data['status'])?><br/>
+<?=htmlspecialchars($this->data['subStatus'])?><br/>
+<?=htmlspecialchars($this->data['statusMessage'])?></p>
+
+<p>Please try again or contact your support desk.</p>
+
+<?php
+endif;
+?>
+
 			</div>	
 			<!-- EINDE CONTENT MET WITTE ACHTERGROND -->			
 		</div>

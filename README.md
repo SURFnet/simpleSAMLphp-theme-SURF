@@ -4,7 +4,7 @@ based on the design for an identity provider login screen that is optimized
 for use on mobile devices like smart phones and tablets. It was tested on a
 variety of devices.
 
-The original design by Stroom can be found on Github Pages, and also in the 
+:fixme: The original design by Stroom can be found on Github Pages, and also in the 
 `gh-pages` branch in this repository.
  
 [Login Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/index.html), 
@@ -24,7 +24,7 @@ We assume simpleSAMLphp is installed in `/var/www/simplesamlphp`, see the
 You can install this theme as follows:
 
     $ cd /var/www/simplesamlphp/modules
-    $ git clone https://github.com/SURFnet/simpleSAMLphp-SURFnet.git themeSURFnet
+    $ git clone https://github.com/SURFnet/simpleSAMLphp-theme-SURF.git themesurf
 
 Now you can edit the main configuration file to enable the theme, change the
 following line in `/var/www/simplesamlphp/config/config.php`:
@@ -33,7 +33,7 @@ following line in `/var/www/simplesamlphp/config/config.php`:
 
 Into:
 
-    'theme.use'             => 'themeSURFnet:SURFnet',
+    'theme.use'             => 'themesurf:surf',
 
 This should enable the theme. You can only see it in action when there is an
 actual login screen with username and password dialog.

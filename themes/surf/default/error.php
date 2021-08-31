@@ -9,23 +9,6 @@
  * probably not a good security practice.
  */
 header('X-Frame-Options: SAMEORIGIN');
-
-$warning = $this->t('{authX509:X509warning:warning}', array(
-    '%days%' => htmlspecialchars($this->data['daysleft']),     // SSP <  1.16
-    '%daysleft%' => htmlspecialchars($this->data['daysleft']), // SSP >= 1.17
-));
-
-if( $this->data['renewurl']) {
-    $warning .= " " . $this->t('{authX509:X509warning:renew_url}', array(
-        '%renewurl%' => $this->data['renewurl'],
-    ));
-} else {
-    $warning .= " " . $this->t('{authX509:X509warning:renew}');
-}
-
-$this->data['header'] = $this->t('{authX509:X509warning:warning_header}');
-$this->data['autofocus'] = 'proceedbutton';
-
 ?>
 <!DOCTYPE html>
 
@@ -47,9 +30,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_320.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/style_480.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('themesurf/style_480.css'); ?>" />
 
 </head>
 
@@ -59,7 +42,7 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themeSURFnet/logo.png'); ?>" alt="" />
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('themesurf/logo.png'); ?>" alt="" />
 			<h1 class="mainTitle"></h1>
 			<ul class="langSelect">
 
@@ -102,20 +85,20 @@ if ($includeLanguageBar) {
 		<div id="content">
 			<!-- CONTENT MET WITTE ACHTERGROND -->
 			<div class="item">
+				<h1><?php echo $this->t($this->data['dictTitle']); ?></h1>
+				<p><?php
+echo htmlspecialchars($this->t($this->data['dictDescr'], $this->data['parameters']));?></p>
+				<!-- <p>
+					Bij aanhoudende problemen kun je contact opnemen met <a href="https://servicedesk.c-college.nl" target="_blank">https://servicedesk.c-college.nl</a>, telefoon 088-4699070 
+					of e&#8209;mail&nbsp;<a href="mailto: servicedesk@c-college.nl">servicedesk@c-college.nl</a>
+				</p> -->
+				<p>
 
-<form style="display: inline; margin: 0px; padding: 0px" action="<?php echo htmlspecialchars($this->data['target']); ?>">
-
-    <?php
-        // Embed hidden fields...
-        foreach ($this->data['data'] as $name => $value) {
-            echo('<input type="hidden" name="' . htmlspecialchars($name) . '" value="' . htmlspecialchars($value) . '" />');
-        }
-    ?>
-    <p><?php echo $warning; ?></p>
-
-    <input type="submit" name="proceed" id="proceedbutton" value="<?php echo htmlspecialchars($this->t('{authX509:X509warning:proceed}')) ?>" />
-
-</form>
+                    <?php echo $this->t('report_trackid'); ?>
+                    <?php echo $this->data['error']['trackId']; ?>
+					<!-- Vermeld de volgende foutcode: <br />
+					<b>1531276567327</b> -->
+				</p>		
 			</div>	
 			<!-- EINDE CONTENT MET WITTE ACHTERGROND -->			
 		</div>
