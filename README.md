@@ -4,11 +4,11 @@ based on the design for an identity provider login screen that is optimized
 for use on mobile devices like smart phones and tablets. It was tested on a
 variety of devices.
 
-:fixme: The original design by Stroom can be found on Github Pages, and also in the 
+The original design by Stroom can be found on Github Pages, and also in the 
 `gh-pages` branch in this repository.
  
-[Login Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/index.html), 
-[Error Page](http://surfnet.github.com/simpleSAMLphp-SURFnet/storing.html).
+[Login Page](https://surfnet.github.io/simpleSAMLphp-theme-SURF/index.html), 
+[Error Page](https://surfnet.github.io/simpleSAMLphp-theme-SURF/storing.html).
 
 The module can be installed in simpleSAMLphp by copying it into the `modules` 
 directory or by using composer.
