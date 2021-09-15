@@ -1,5 +1,5 @@
 # Introduction
-This project contains a [simpleSAMLphp](http://www.simplesamlphp.org) theme 
+This project contains a [simpleSAMLphp](https://www.simplesamlphp.org) theme 
 based on the design for an identity provider login screen that is optimized 
 for use on mobile devices like smart phones and tablets. It was tested on a
 variety of devices.
@@ -37,23 +37,3 @@ Into:
 
 This should enable the theme. You can only see it in action when there is an
 actual login screen with username and password dialog.
-
-# Customization
-If you want to use your own logo you need to modify the CSS somewhat. The logo 
-included in the distribution has size 128x87. You need to modify 
-`www/style.css` in the following places:
-
-    div#header img{
-            width: 128px;
-            margin: 0 0 0 20px;
-    }
-
-Set `width` here to the width of the logo.
-
-    div#header{
-            position:relative;
-            height: 108px;
-    }
-
-Set `height` here to the height of the logo and add 21 to it. So if your logo
-has height 44, the height specified here should be `65px`.
