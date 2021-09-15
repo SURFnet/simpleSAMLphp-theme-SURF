@@ -1,0 +1,55 @@
+{% set pagetitle = 'Enter your username and password'|trans %}
+
+{% extends "@core/base.twig" %}
+
+{% block preload %}
+<link rel="stylesheet" href="{{ asset('style.css', 'themesurf') }}">
+{% endblock %}
+
+{% block postload %}
+    <script src="{{ asset('js/loginuserpass.js', 'core') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {% if errorcode -%}
+				<div class="error">
+                {% set errtitles = errorcodes['title'] %}
+                {% set errtitle = errtitles[errorcode] %}
+
+                <h3>{{ errtitle|trans(errorparams) }}</h3>
+
+                {% set errdescs = errorcodes['descr'] %}
+                {% set errdesc = errdescs[errorcode] %}
+
+                <p>{{ errdesc|trans(errorparams) }}</p>
+		</div>
+    {%- endif %}
+
+			<div class="item">
+				<form id="login" method="POST" action="?" name="f">
+                    <label for="username">{{ 'Username'|trans }}</label>
+                    <input id="username" {{ forceUsername ? 'disabled' }} placeholder="{{ username }}" type="text" name="username" class="edge"
+            {%- if not forceUsername %} tabindex="1" value="{{ username }}" autocomplete="username" {% endif %}
+            {%- if not forceUsername and not username %} autofocus {% endif %} >
+
+                    <label for="password">{{ 'Password'|trans}}</label>
+                    <input id="password" type="password" tabindex="2" name="password" class="edge" autocomplete="current-password"
+                    {%- if forceUsername or username %} autofocus {% endif %} >
+            {%- for name, value in stateparams %}
+
+            <input type="hidden" name="{{ name }}" value="{{ value }}">
+            {%- endfor %}
+
+            <button id="submit_button"
+                    type="submit" tabindex="6" data-processing="{% trans %}Processing...{% endtrans %}">
+              {% trans %}Login{% endtrans %}
+            </button>
+				</form>
+
+    <br><br>
+    <div> 
+        <strong>{{ 'Help! I don\'t remember my password.'|trans }}</strong>
+        <p>{{ 'Without your username and password you cannot authenticate yourself for access to the service. There may be someone that can help you. Consult the help desk at your organization!'|trans }}</p>
+    </div>
+
+{% endblock %}

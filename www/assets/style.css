@@ -111,7 +111,7 @@ div#footer p, div.createIndex, ul.langSelect{
 div, input, div.item, label, a.recover, ul, li, img, h1.mainTitle {
 	float: left;
 }
-span, input[type="submit"], ul.langSelect, div.example{
+span, input[type="submit"], button[type="submit"], ul.langSelect, div.example{
 	float: right;
 }
 h1, h2{
@@ -126,12 +126,12 @@ form, input {
 label, span.example{
 	margin: 10px 0 0 0;
 }
-input{
+input, button{
 	height: 30px;
 	border: 1px solid #808080;
 	margin: 5px 0 10px 0;
 }
-input[type="submit"]{
+input[type="submit"], button[type="submit"]{
 	width: 105px;
 	background: #555;
 	border: 1px solid #222;
@@ -151,8 +151,9 @@ ul li{
 
 /*----------------------------------------*/
 /*              MAIN ELEMENTS             */
-div#content, div#wrapper, div#header{
+div#content, div#wrapper, div#header, div#layout{
 	width:100%;
+	background: none;
 }
 
 div#wrapper{
@@ -208,7 +209,7 @@ h1.mainTitle{
 	margin: 20px 0 20px 20px;
 }
 div#header img{
-	width: 200px;
+	width: 180px;
 	margin: 10px 0 0 10px;
 	left: 50%;
 }
@@ -246,7 +247,7 @@ div.createIndex{
 body.storing div.createIndex{
 	padding: 0 10px;
 }
-p.error{
+p.error, div.error{
 	min-height: 20px;
 	background: url(icon_error.png) left center no-repeat;
 	padding: 0 0 0 25px;
@@ -292,7 +293,7 @@ span{
 	font-size: 100%;
 	font-weight: normal;
 }
-h1, label, input[type="submit"], h2, li.active a{
+h1, label, input[type="submit"], button[type="submit"] h2, li.active a{
 	font-weight: bold;
 }
 a{
@@ -302,7 +303,7 @@ a{
 a:hover{
 	text-decoration: underline;
 }
-input[type="submit"]{
+input[type="submit"], button[type="submit"] {
 	color: #FFF;
 }
 span, div#footer{
@@ -317,8 +318,11 @@ li.active a:hover{
 li.active a{
 	color: #333;
 }
-p.error{
+.error, .error h3{
 	color: #F00;
+}
+.error h3 {
+	font-weight: bold;
 }
 /*                  FONTS                 */
 /*----------------------------------------*/
