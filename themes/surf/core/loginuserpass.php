@@ -109,6 +109,9 @@ if ($this->data['errorcode'] !== NULL) {
 
                 <p>{{ errdesc|trans(errorparams) }}</p>
 		</div>
+<?php
+}
+?>
 
 				<form id="login" method="POST" action="?" name="f">
 					<label for="username"><?php echo $this->t('{login:username}'); ?></label> <!-- <span class="example">(bv. 123456@catherijne.nl)</span> -->
