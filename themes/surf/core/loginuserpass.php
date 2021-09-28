@@ -97,18 +97,7 @@ if ($includeLanguageBar) {
 <?php
 if ($this->data['errorcode'] !== NULL) {
 ?>
-
-				<div class="error">
-                {% set errtitles = errorcodes['title'] %}
-                {% set errtitle = errtitles[errorcode] %}
-
-                <h3>{{ errtitle|trans(errorparams) }}</h3>
-
-                {% set errdescs = errorcodes['descr'] %}
-                {% set errdesc = errdescs[errorcode] %}
-
-                <p>{{ errdesc|trans(errorparams) }}</p>
-		</div>
+		<p class="error"><?php echo $this->t('{errors:descr_' . $this->data['errorcode'] . '}'); ?></p> <!-- ERRORHANDLER BIJ HET INLOGGEN -->
 <?php
 }
 ?>
