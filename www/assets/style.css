@@ -164,6 +164,7 @@ div#wrapper{
 div#header{
 	position:relative;
 	height: 108px;
+	padding-bottom: 1ex;
 }
 div#footer{
 	width:100%;
