@@ -25,8 +25,9 @@
 		</div>
     {%- endif %}
 
+    {% set querystring = stateparams is defined ? "?" : "?AuthState=" ~ AuthState %}
 			<div class="item">
-				<form id="login" method="POST" action="?" name="f">
+				<form id="login" method="POST" action="{{ querystring }}" name="f">
                     <label for="username">{{ 'Username'|trans }}</label>
                     <input id="username" {{ forceUsername ? 'disabled' }} placeholder="{{ username }}" type="text" name="username" class="edge"
             {%- if not forceUsername %} tabindex="1" value="{{ username }}" autocomplete="username" {% endif %}
@@ -35,10 +36,13 @@
                     <label for="password">{{ 'Password'|trans}}</label>
                     <input id="password" type="password" tabindex="2" name="password" class="edge" autocomplete="current-password"
                     {%- if forceUsername or username %} autofocus {% endif %} >
+
+            {% if stateparams is defined %}
             {%- for name, value in stateparams %}
 
             <input type="hidden" name="{{ name }}" value="{{ value }}">
             {%- endfor %}
+            {% endif %}
 
             <button id="submit_button"
                     type="submit" tabindex="6" data-processing="{% trans %}Processing...{% endtrans %}">
